@@ -1,0 +1,211 @@
+.header {
+  width: 100%;
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+.mainHeader {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  display: grid;
+  grid-template-columns: auto minmax(280px, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+.search {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+
+  overflow: hidden;
+}
+
+.search input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+
+  border: 0;
+  outline: 0;
+
+  font: inherit;
+  color: var(--color-text);
+}
+
+.search input::placeholder {
+  color: var(--color-gray-500);
+}
+
+.search button {
+  padding: 0.9rem 1rem;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.action {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+
+  border: 0;
+  background: transparent;
+
+  color: inherit;
+  font: inherit;
+  font-size: 0.8rem;
+
+  cursor: pointer;
+}
+
+.icon,
+.cartIcon {
+  font-size: 1.4rem;
+}
+
+.cartIcon {
+  position: relative;
+}
+
+.cartCount {
+  position: absolute;
+  top: -0.55rem;
+  right: -0.7rem;
+
+  min-width: 1.1rem;
+  height: 1.1rem;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0 0.2rem;
+
+  border-radius: 999px;
+
+  background: var(--color-secondary);
+  color: var(--color-white);
+
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.navigation {
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.navContainer {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menuButton {
+  padding: 0.9rem 0;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: 0;
+  background: transparent;
+
+  color: #073b70;
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLinks a {
+  padding: 0.9rem 0;
+
+  color: var(--color-gray-700);
+  transition: color var(--transition-fast);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.navLinks a:hover {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 900px) {
+  .mainHeader {
+    grid-template-columns: 1fr auto;
+  }
+
+  .search {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .navLinks {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .mainHeader {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .logoTop {
+    font-size: 1.45rem;
+  }
+
+  .actions {
+    gap: 0.8rem;
+  }
+
+  .action span:last-child {
+    display: none;
+  }
+
+  .search input {
+    padding: 0.75rem;
+  }
+
+  .navContainer {
+    padding: 0 1rem;
+  }
+}

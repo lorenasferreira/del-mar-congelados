@@ -1,0 +1,46 @@
+.topBar {
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.8rem;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0.55rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.container span,
+.whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.whatsapp {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.whatsapp:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .container span:first-child,
+  .whatsapp {
+    display: none;
+  }
+}
