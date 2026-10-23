@@ -1,0 +1,85 @@
+.container {
+  width: min(100% - 3rem, var(--container-width));
+  margin-inline: auto;
+}
+
+.hero {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--color-accent-soft), var(--color-white));
+}
+
+.eyebrow {
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.16em;
+}
+
+.title {
+  margin: 1rem 0 0;
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.title em,
+.closing em {
+  color: var(--color-secondary);
+  font-family: var(--font-editorial);
+  font-weight: 500;
+}
+
+.title em { display: inline-block; white-space: nowrap; }
+
+.intro {
+  max-width: 650px;
+  margin: 1.5rem 0 0;
+  color: var(--color-gray-700);
+  line-height: 1.85;
+}
+
+.notice {
+  margin: 1.5rem 0 0;
+  color: var(--color-gray-700);
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+.section { padding: 4rem 0; background: var(--color-off-white); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.closing { padding: 4rem 0 5rem; text-align: center; }
+.closing h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; }
+.closing p { margin: 1.25rem 0 1.75rem; color: var(--color-gray-700); line-height: 1.8; }
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.9rem;
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.cta:hover { background: var(--color-secondary); }
+.cta:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 4px; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .container { width: calc(100% - 2rem); }
+  .hero { padding: 3.5rem 0; }
+  .section { padding: 2.5rem 0; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta { transition: none; }
+}

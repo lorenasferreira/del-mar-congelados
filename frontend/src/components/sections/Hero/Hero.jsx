@@ -25,7 +25,7 @@ function Hero() {
           entregues até você.
         </p>
 
-        <a href="#" className={styles.cta}>
+        <a href="/contato" className={styles.cta}>
           <MessageCircle size={18} strokeWidth={1.8} />
           Fazer pedido pelo WhatsApp
         </a>

@@ -1,0 +1,252 @@
+
+.page {
+  min-height: 100vh;
+  background: var(--color-white);
+}
+
+.container {
+  width: min(100% - 3rem, 1200px);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.hero {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #eaf5fb, #ffffff);
+}
+
+.title {
+  margin: 1rem 0 0;
+  color: var(--color-primary);
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  line-height: 1.1;
+}
+
+.title em,
+.sectionHeading h2 em,
+.infoText h2 em {
+  color: var(--color-secondary);
+  font-family: var(--font-editorial);
+  font-weight: 400;
+}
+
+.intro {
+  max-width: 650px;
+  margin: 1.75rem 0 0;
+  color: var(--color-gray-700);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.contactSection {
+  padding: 6rem 0 7rem;
+}
+
+.sectionHeading {
+  max-width: 700px;
+  margin-bottom: 3rem;
+}
+
+.sectionHeading h2,
+.infoText h2 {
+  margin: 1rem 0 1.25rem;
+  color: var(--color-primary);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+}
+
+.sectionHeading p,
+.infoText p {
+  color: var(--color-gray-700);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.5rem;
+  border: 1px solid #e2edf5;
+  border-radius: 12px;
+  background: #f8fbfd;
+}
+
+.iconBox {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: #e3f2fa;
+  color: var(--color-primary);
+}
+
+.card h3 {
+  margin: 1.75rem 0 0.75rem;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0 0 1.5rem;
+  color: var(--color-gray-700);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.pending {
+  margin-top: auto;
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cardLink:hover {
+  color: var(--color-secondary);
+}
+
+.cardLink:focus-visible,
+.cta:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 4px;
+}
+
+.infoSection {
+  padding: 6rem 0;
+  background: #f1f7fb;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(3rem, 6vw, 7rem);
+}
+
+.infoText {
+  max-width: 540px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.infoPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  border: 1px solid #dceaf3;
+  border-radius: 16px;
+  background: var(--color-white);
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.infoItem svg {
+  flex-shrink: 0;
+  color: var(--color-secondary);
+}
+
+.infoItem h3 {
+  margin: 0 0 0.5rem;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.infoItem p {
+  margin: 0;
+  color: var(--color-gray-700);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 2rem, 1200px);
+  }
+
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .contactSection,
+  .infoSection {
+    padding: 4rem 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .infoPanel {
+    padding: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    transition: none;
+  }
+}

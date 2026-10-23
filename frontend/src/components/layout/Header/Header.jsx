@@ -54,7 +54,12 @@ function Header() {
           />
         </Link>
 
-        <Link to="/#contato" onClick={closeMenu} className={styles.whatsappButton} aria-label="Pedir pelo WhatsApp — informações de atendimento">
+        <Link
+          to="/contato"
+          onClick={closeMenu}
+          className={styles.whatsappButton}
+          aria-label="Pedir pelo WhatsApp — informações de atendimento"
+        >
           <MessageCircle size={19} strokeWidth={1.7} aria-hidden="true" />
           <span>Pedir pelo WhatsApp</span>
         </Link>
@@ -68,7 +73,9 @@ function Header() {
             className={styles.menuButton}
             aria-expanded={menuOpen}
             aria-controls="primary-navigation"
-            aria-label={menuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
+            aria-label={
+              menuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"
+            }
             onClick={() => setMenuOpen((open) => !open)}
           >
             <Menu size={20} strokeWidth={1.6} aria-hidden="true" />
@@ -80,13 +87,21 @@ function Header() {
             id="primary-navigation"
             className={`${styles.navLinks} ${menuOpen ? styles.navLinksOpen : ""}`}
           >
-            <Link to="/" onClick={closeMenu}>Início</Link>
-            <Link to="/produtos" onClick={closeMenu}>Produtos</Link>
-            <span className={styles.pendingLink} aria-disabled="true">
-              Receitas Del Mar <small>Em breve</small>
-            </span>
-            <Link to="/nossa-historia" onClick={closeMenu}>Nossa História</Link>
-            <Link to="/#contato" onClick={closeMenu}>Contato</Link>
+            <Link to="/" onClick={closeMenu}>
+              Início
+            </Link>
+            <Link to="/produtos" onClick={closeMenu}>
+              Produtos
+            </Link>
+            <Link to="/receitas" onClick={closeMenu}>
+              Receitas Del Mar
+            </Link>
+            <Link to="/nossa-historia" onClick={closeMenu}>
+              Nossa História
+            </Link>
+            <Link to="/contato" onClick={closeMenu}>
+              Contato
+            </Link>
           </div>
         </div>
       </nav>

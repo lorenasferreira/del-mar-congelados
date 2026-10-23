@@ -6,6 +6,9 @@ import NotFound from "./pages/NotFound/NotFound";
 import Home from "./pages/Home/Home";
 import Products from "./pages/Products/Products";
 import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import Recipes from "./pages/Recipes/Recipes";
+import RecipeDetail from "./pages/RecipeDetail/RecipeDetail";
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="produtos" element={<Products />} />
           <Route path="nossa-historia" element={<About />} />
+          <Route path="contato" element={<Contact />} />
+          <Route path="receitas" element={<Recipes />} />
+          <Route path="receitas/:slug" element={<RecipeDetail />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

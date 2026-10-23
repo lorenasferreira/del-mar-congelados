@@ -19,8 +19,8 @@ const WHATSAPP_URL = WHATSAPP_NUMBER
 const navigationLinks = [
   { label: "Início", href: "/" },
   { label: "Produtos", href: "/produtos" },
-  { label: "Receitas Del Mar", disabled: true },
-  { label: "Nossa História", href: "/#historia" },
+  { label: "Receitas Del Mar", href: "/receitas" },
+  { label: "Nossa História", href: "/nossa-historia" },
   {
     label: "WhatsApp",
     href: WHATSAPP_URL,
@@ -89,9 +89,6 @@ function Footer() {
                   {link.disabled ? (
                     <span aria-disabled="true">
                       {link.label}
-                      {link.label === "Receitas Del Mar" && (
-                        <small> Em breve</small>
-                      )}
                     </span>
                   ) : link.external ? (
                     <a
