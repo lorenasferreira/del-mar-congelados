@@ -1,46 +1,112 @@
 .topBar {
+  display: flex;
   width: 100%;
   background: var(--color-primary);
   color: var(--color-white);
   font-size: 0.8rem;
 }
 
-.container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0.55rem 1.5rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+.viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
-.container span,
-.whatsapp {
+.track {
   display: flex;
+  width: max-content;
+  animation: ticker 55s linear infinite;
+}
+
+.group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100vw;
+  gap: 2rem;
+  padding: 0.55rem 1.5rem;
+  white-space: nowrap;
+}
+
+.item {
+  display: inline-flex;
   align-items: center;
   gap: 0.4rem;
 }
 
-.whatsapp {
+.item > svg {
+  flex-shrink: 0;
+}
+
+.hours {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.separator {
+  color: var(--color-accent);
+}
+
+.topBar:hover .track,
+.topBar:focus-within .track,
+.paused {
+  animation-play-state: paused;
+}
+
+.pauseButton {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  min-height: 36px;
+  padding: 0;
+  border: 0;
+  background: var(--color-primary-dark);
   color: inherit;
-  text-decoration: none;
-  transition: opacity var(--transition-fast);
 }
 
-.whatsapp:hover {
-  opacity: 0.75;
+.pauseButton:hover {
+  background: var(--color-secondary);
 }
 
-@media (max-width: 768px) {
-  .container {
-    justify-content: center;
-    text-align: center;
+.viewport:focus-visible,
+.pauseButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -3px;
+}
+
+@keyframes ticker {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    width: 100%;
+    animation: none;
   }
 
-  .container span:first-child,
-  .whatsapp {
+  .group {
+    min-width: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem 1rem;
+    padding: 0.55rem 1rem;
+  }
+
+  .group[aria-hidden="true"],
+  .separator,
+  .pauseButton {
     display: none;
+  }
+
+  .hours {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .item {
+    max-width: 100%;
   }
 }

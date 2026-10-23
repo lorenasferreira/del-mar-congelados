@@ -43,6 +43,8 @@
 }
 
 .heading h2 span {
+  display: inline-block;
+  white-space: nowrap;
   color: var(--color-secondary);
 
   font-family: var(--font-editorial);
@@ -73,6 +75,17 @@
   color: var(--color-secondary);
 }
 
+.controls {
+  display: none;
+}
+
+.grid:focus-visible,
+.controls button:focus-visible,
+.viewAll:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 4px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -95,6 +108,10 @@
     gap: 1rem;
   }
 
+  .heading h2 span {
+    display: block;
+  }
+
   .heading h2 {
     font-size: clamp(2rem, 10vw, 2.6rem);
   }
@@ -105,7 +122,44 @@
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 88%;
     gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0.35rem 0 1rem;
+  }
+
+  .grid > * {
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .controls button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 50%;
+    background: var(--color-white);
+    color: var(--color-primary);
+  }
+
+  .controls button:hover:not(:disabled) {
+    background: var(--color-accent-soft);
+  }
+
+  .controls button:disabled {
+    opacity: 0.4;
+    cursor: default;
   }
 }

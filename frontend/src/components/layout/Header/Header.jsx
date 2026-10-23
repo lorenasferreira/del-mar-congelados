@@ -1,4 +1,4 @@
-import { Search, UserRound, ShoppingCart, Menu } from "lucide-react";
+import { Menu, MessageCircle } from "lucide-react";
 
 import styles from "./Header.module.css";
 
@@ -13,33 +13,10 @@ function Header() {
           />
         </a>
 
-        <div className={styles.search}>
-          <input
-            type="search"
-            placeholder="O que você está buscando?"
-            aria-label="Buscar produtos"
-          />
-
-          <button type="button" aria-label="Buscar">
-            <Search size={21} strokeWidth={1.7} />
-          </button>
-        </div>
-
-        <div className={styles.actions}>
-          <button type="button" className={styles.action}>
-            <UserRound size={24} strokeWidth={1.5} />
-            <span>Minha conta</span>
-          </button>
-
-          <button type="button" className={styles.action}>
-            <span className={styles.cartIcon}>
-              <ShoppingCart size={25} strokeWidth={1.5} />
-              <span className={styles.cartCount}>0</span>
-            </span>
-
-            <span>Meu carrinho</span>
-          </button>
-        </div>
+        <a href="#contato" className={styles.whatsappButton} aria-label="Pedir pelo WhatsApp — informações de atendimento">
+          <MessageCircle size={19} strokeWidth={1.7} aria-hidden="true" />
+          <span>Pedir pelo WhatsApp</span>
+        </a>
       </div>
 
       <nav className={styles.navigation} aria-label="Navegação principal">
@@ -50,9 +27,9 @@ function Header() {
           </button>
 
           <div className={styles.navLinks}>
-            <a href="#produtos">Produtos</a>
-            <a href="#ofertas">Ofertas</a>
-            <a href="#receitas">Receitas</a>
+            <a href="#categorias">Produtos</a>
+            <a href="#destaques">Destaques</a>
+            <span className={styles.pendingLink}>Receitas Del Mar</span>
             <a href="#historia">Nossa história</a>
             <a href="#contato">Contato</a>
           </div>

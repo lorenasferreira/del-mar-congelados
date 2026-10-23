@@ -1,5 +1,3 @@
-import { Plus } from "lucide-react";
-
 import styles from "./ProductCard.module.css";
 
 function ProductCard({ product }) {
@@ -17,20 +15,10 @@ function ProductCard({ product }) {
       <div className={styles.content}>
         <h3>{product.name}</h3>
 
-        <div className={styles.bottom}>
-          <p className={styles.price}>
-            {formattedPrice}
-            <span>/{product.unit}</span>
-          </p>
-
-          <button
-            type="button"
-            className={styles.addButton}
-            aria-label={`Adicionar ${product.name}`}
-          >
-            <Plus size={20} strokeWidth={2} />
-          </button>
-        </div>
+        <p className={styles.price}>
+          {formattedPrice}
+          <span>/{product.unit}</span>
+        </p>
       </div>
     </article>
   );
