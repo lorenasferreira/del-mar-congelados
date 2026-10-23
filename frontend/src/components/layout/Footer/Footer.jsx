@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowUpRight, MapPin, MessageCircle, Waves } from "lucide-react";
 import { FaInstagram } from "react-icons/fa6";
 
@@ -5,7 +6,6 @@ import styles from "./Footer.module.css";
 
 const INSTAGRAM_URL = "https://www.instagram.com/casadelmar.meriti/";
 
-// Substituir pelo número comercial confirmado, no formato 55 + DDD + número.
 const WHATSAPP_NUMBER = "";
 
 const WHATSAPP_MESSAGE = encodeURIComponent(
@@ -17,11 +17,17 @@ const WHATSAPP_URL = WHATSAPP_NUMBER
   : null;
 
 const navigationLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Categorias", href: "#categorias" },
-  { label: "Destaques", href: "#destaques" },
-  { label: "Nossa história", href: "#historia" },
-  { label: "Instagram", href: "#instagram" },
+  { label: "Início", href: "/" },
+  { label: "Produtos", href: "/produtos" },
+  { label: "Receitas Del Mar", disabled: true },
+  { label: "Nossa História", href: "/#historia" },
+  {
+    label: "WhatsApp",
+    href: WHATSAPP_URL,
+    external: true,
+    disabled: !WHATSAPP_URL,
+  },
+  { label: "Instagram", href: INSTAGRAM_URL, external: true },
 ];
 
 function Footer() {
@@ -32,8 +38,8 @@ function Footer() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.brand}>
-            <a
-              href="#inicio"
+            <Link
+              to="/"
               className={styles.brandLink}
               aria-label="Del Mar Congelados — voltar ao início"
             >
@@ -43,7 +49,7 @@ function Footer() {
                 DEL MAR
                 <span>CONGELADOS</span>
               </span>
-            </a>
+            </Link>
 
             <p className={styles.description}>
               Qualidade, praticidade e o melhor do mar para a sua mesa.
@@ -79,8 +85,25 @@ function Footer() {
 
             <ul className={styles.links}>
               {navigationLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href}>{link.label}</a>
+                <li key={link.label}>
+                  {link.disabled ? (
+                    <span aria-disabled="true">
+                      {link.label}
+                      {link.label === "Receitas Del Mar" && (
+                        <small> Em breve</small>
+                      )}
+                    </span>
+                  ) : link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link to={link.href}>{link.label}</Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -141,7 +164,14 @@ function Footer() {
           </p>
 
           <p className={styles.credit}>
-            Desenvolvido por <a href="https://lorenaferreira.dev" target="_blank" rel="noopener noreferrer">Lorena Ferreira</a>
+            Desenvolvido por{" "}
+            <a
+              href="https://lorenaferreira.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Lorena Ferreira
+            </a>
           </p>
         </div>
       </div>

@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+  z-index: 5;
   width: 100%;
   background: var(--color-white);
   color: var(--color-primary);
@@ -74,7 +76,7 @@
 .menuButton {
   padding: 0.9rem 0;
 
-  display: flex;
+  display: none;
   align-items: center;
   gap: 0.5rem;
 
@@ -104,6 +106,19 @@
   transition: color var(--transition-fast);
 }
 
+.pendingLink small {
+  margin-left: 0.35rem;
+  color: var(--color-gray-700);
+  font-size: 0.7rem;
+}
+
+.menuButton:focus-visible,
+.navLinks a:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .navLinks a:hover {
   color: var(--color-secondary);
 }
@@ -123,10 +138,41 @@
 
   .navContainer {
     padding: 0 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .menuButton {
+    display: flex;
+    align-self: flex-start;
   }
 
   .navLinks {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     display: none;
+    padding: 0.5rem 1rem 0.75rem;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-gray-100);
+    box-shadow: 0 12px 24px rgba(3, 43, 85, 0.12);
+    max-height: 65dvh;
+    overflow-y: auto;
+  }
+
+  .navLinksOpen {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-bottom: 0.75rem;
+  }
+
+  .navLinks a,
+  .pendingLink {
+    padding: 0.8rem 0.25rem;
   }
 }
 
