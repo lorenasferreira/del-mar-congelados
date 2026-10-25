@@ -158,6 +158,13 @@ a.contactItem:hover {
   line-height: 1.8;
 }
 
+.instagramLabel {
+  margin: 0 0 0.25rem;
+  color: #c3d9e9;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
 .instagramLink {
   display: inline-flex;
   align-items: center;

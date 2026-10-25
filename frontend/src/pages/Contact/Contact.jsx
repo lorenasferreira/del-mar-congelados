@@ -65,7 +65,7 @@ function Contact() {
               <h3>Acompanhe nossas novidades</h3>
 
               <p>
-                Confira as publicações e novidades da Casa del Mar no Instagram.
+                Confira as publicações e novidades da matriz Casa del Mar no Instagram.
               </p>
 
               <a

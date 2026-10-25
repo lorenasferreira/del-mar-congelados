@@ -143,6 +143,8 @@ function Footer() {
               Acompanhe nossas novidades, produtos e inspirações do mar.
             </p>
 
+            <p className={styles.instagramLabel}>Instagram da matriz</p>
+
             <a
               href={INSTAGRAM_URL}
               target="_blank"

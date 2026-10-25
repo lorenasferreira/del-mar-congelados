@@ -56,9 +56,9 @@ function InstagramFeed() {
 
       <div className={styles.container}>
         <div className={styles.heading}>
-          <p className={styles.eyebrow}>Acompanhe nosso dia a dia</p>
+          <p className={styles.eyebrow}>Acompanhe o dia a dia da matriz</p>
 
-          <h2 id="instagram-title">Siga-nos no Instagram</h2>
+          <h2 id="instagram-title">Instagram da matriz</h2>
 
           <a
             href={INSTAGRAM_URL}
