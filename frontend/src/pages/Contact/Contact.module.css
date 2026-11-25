@@ -29,7 +29,6 @@
   line-height: 1.1;
 }
 
-.title em,
 .sectionHeading h2 em,
 .infoText h2 em {
   color: var(--color-secondary);
@@ -258,4 +257,11 @@
 
 @media (max-width: 700px) {
   .cards { grid-template-columns: 1fr; }
+}
+
+.title em {
+  color: var(--color-secondary);
+  font-family: var(--font-primary);
+  font-weight: var(--font-bold);
+  font-style: normal;
 }

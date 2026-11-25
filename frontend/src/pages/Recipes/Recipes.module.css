@@ -22,7 +22,6 @@
   letter-spacing: -0.035em;
 }
 
-.title em,
 .closing em {
   color: var(--color-secondary);
   font-family: var(--font-editorial);
@@ -82,4 +81,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .cta { transition: none; }
+}
+
+.title em {
+  color: var(--color-secondary);
+  font-family: var(--font-primary);
+  font-weight: var(--font-bold);
+  font-style: normal;
 }

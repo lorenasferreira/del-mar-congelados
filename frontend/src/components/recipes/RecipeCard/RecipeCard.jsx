@@ -2,9 +2,11 @@ import { ArrowUpRight, ChefHat, Clock3, CookingPot } from "lucide-react";
 import { Link } from "react-router-dom";
 import styles from "./RecipeCard.module.css";
 
-export function RecipeImage({ recipe }) {
+export function RecipeImage({ recipe, priority = false }) {
   if (recipe.image) {
-    return <img className={styles.image} src={recipe.image} alt={recipe.name} loading="lazy" />;
+    return <img className={styles.image} src={recipe.image} alt={recipe.imageAlt ?? recipe.name}
+      width="1080" height="810" loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : undefined} />;
   }
 
   return (

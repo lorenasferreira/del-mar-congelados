@@ -79,10 +79,10 @@ Raios são moderados em cards e fotografias; filtros e alguns CTAs usam pílula.
 
 `MainLayout/MainLayout.jsx` renderiza TopBar → Header → Outlet → Footer → BackToTop. Páginas renderizam seu próprio `main`, sem duplicar esses elementos globais.
 
-- **TopBar:** azul-marinho, marca e linha de produtos em sequência sem quebra durante a animação, separadores, ticker CSS de 55s. Cópia visual com `aria-hidden`. Pausa manual, hover/foco; versão estática reorganizada em movimento reduzido. Sem WhatsApp nessa faixa.
-- **Header:** logo e CTA de atendimento; cinco itens horizontais acima de 768px. Até 768px, botão Menu com `aria-expanded`, `aria-controls` e label; dropdown absoluto abaixo do Header, fundo branco, sombra, `max-height: 65dvh` e rolagem interna. Não empurra o conteúdo. Fecha por seleção, Escape ou passagem ao desktop; foco retorna ao botão em Escape. Links fechados ficam em `display: none`.
+- **TopBar:** azul-marinho, Barra Olímpica e horários restaurados em sequência sem quebra durante a animação, separadores, ticker CSS de 55s. Cópia visual com `aria-hidden`. Pausa manual, hover/foco; versão estática reorganizada em movimento reduzido. A validação dos horários antes da publicação está no roadmap.
+- **Header:** logo e CTA de atendimento; cinco itens horizontais acima de 768px. Até 768px, botão Menu com `aria-expanded`, `aria-controls` e label; dropdown absoluto abaixo do Header, fundo branco, sombra, `max-height: 65dvh` e rolagem interna. Não empurra o conteúdo. Fecha por seleção, Escape ou passagem ao desktop; foco retorna ao botão em Escape. Links fechados ficam em `display: none`. Após a TopBar sair da tela, o Header acompanha a rolagem e se recolhe depois de um segundo em repouso. Menu aberto e foco mantêm o Header visível.
 - **CTA circular do Header:** até 480px, 45 × 45px, SVG 21 × 21px, texto oculto por `display: none`, sem gap residual.
-- **Footer:** quatro colunas no desktop, duas até 1024px, uma até 600px. Marca Del Mar, navegação, atendimento e Instagram. WhatsApp condicionado à existência de número. Crédito com link discreto para `https://lorenaferreira.dev`, nova aba, `noopener noreferrer` e foco visível.
+- **Footer:** quatro colunas no desktop, duas até 1024px, uma até 600px. Logo completa da Del Mar, navegação, atendimento e Instagram. WhatsApp condicionado à existência de número. Crédito com link discreto para `https://lorenaferreira.dev`, nova aba, `noopener noreferrer` e foco visível.
 - **BackToTop:** círculo 48 × 48px, fixo no canto inferior direito; aparece após `scrollY > Math.max(600, innerHeight)`. Respeita safe area, usa scroll suave ou instantâneo conforme preferência de movimento, com cleanup dos listeners. Não existe WhatsApp flutuante implementado.
 
 ### Botões, links e cards
@@ -96,9 +96,9 @@ CTAs usam azul-marinho/azul, texto branco, ícone discreto, padding generoso e h
 
 ### Páginas e conteúdo editorial
 
-Home: Hero com fotografia, overlay e onda; categorias circulares; benefícios; destaques; BrandStory de qualidade/seleção com imagem; prévia Quem Somos; Instagram. **Não existe vídeo funcional** no Hero ou na BrandStory.
+Home: Hero com fotografia, overlay e onda; categorias circulares; benefícios; consulta de área por CEP; destaques; BrandStory de qualidade/seleção com imagem; prévia Quem Somos; Instagram. **Não existe vídeo funcional** no Hero ou na BrandStory.
 
-Páginas institucionais usam hero claro em gradiente, eyebrow, títulos com itálico editorial, textos curtos, grids e CTA. Catálogo inclui aviso demonstrativo, busca e ordenação. Receitas inclui aviso demonstrativo, cards e CTA; detalhe inclui título, descrição, `dl` de metadados, ingredientes em `ul`, preparo em `ol` e outras receitas.
+Páginas institucionais usam um hero claro em gradiente e títulos com pesos mais fortes em Poppins. Quem Somos combina o bloco de raízes em azul-marinho com duas seções editoriais. Catálogo inclui aviso demonstrativo, busca e ordenação. Receitas inclui aviso demonstrativo, cards e CTA; detalhe inclui título, descrição, `dl` de metadados, ingredientes em `ul`, preparo em `ol` e outras receitas.
 
 ### Breakpoints encontrados
 
@@ -134,7 +134,7 @@ Existem `aria-label`, ícones decorativos com `aria-hidden`, foco visível em me
 
 ## 3. Melhorias pendentes
 
-- Fotografias oficiais, revisão editorial e aprovação visual da cliente. Há seis referências de imagem sem arquivo no repositório; caminhos em [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md).
+- Fotografias oficiais, revisão editorial e aprovação visual da cliente. Os caminhos para os arquivos institucionais opcionais estão em [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md).
 - Revisar alt do Hero, que ainda usa “frescos”, e textos de garantia/entrega/história antes do lançamento.
 - Auditar contraste, teclado, leitores de tela e movimento reduzido em todas as páginas; não declarar conformidade WCAG sem avaliação.
 - Revisar idioma/SEO do documento HTML, otimização de imagens e carregamento externo de fontes.

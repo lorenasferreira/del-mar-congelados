@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, MessageCircle, Waves } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { FaInstagram } from "react-icons/fa6";
 
 import { INSTAGRAM_URL, WHATSAPP_URL } from "../../../config/contact";
@@ -28,12 +28,13 @@ function Footer() {
               className={styles.brandLink}
               aria-label="Del Mar Congelados — voltar ao início"
             >
-              <Waves size={30} strokeWidth={1.5} aria-hidden="true" />
-
-              <span className={styles.brandName}>
-                DEL MAR
-                <span>CONGELADOS</span>
-              </span>
+              <img
+                src="/assets/logos/del-mar-congelados-logo.webp"
+                alt=""
+                width="480"
+                height="480"
+                loading="lazy"
+              />
             </Link>
 
             <p className={styles.description}>

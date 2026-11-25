@@ -1,6 +1,8 @@
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 5;
+  transition: transform 220ms ease;
   width: 100%;
   background: var(--color-white);
   color: var(--color-primary);
@@ -206,4 +208,13 @@
   color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 0.25em;
+}
+
+.header[data-idle="true"]:not(:focus-within) {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header { transition: none; }
 }

@@ -12,7 +12,7 @@ function Recipes() {
           <span className={styles.eyebrow}>INSPIRAÇÃO À MESA</span>
           <h1 className={styles.title}>Receitas <em>Del Mar</em></h1>
           <p className={styles.intro}>Ideias para transformar peixes e frutos do mar em bons momentos à mesa. Escolha uma receita e descubra seu próximo preparo.</p>
-          <p className={styles.notice}>Receitas demonstrativas, sujeitas à revisão. Fotografias dos pratos em breve.</p>
+          <p className={styles.notice}>Receitas demonstrativas, sujeitas à revisão. Imagens ilustrativas geradas por IA.</p>
         </div>
       </section>
       <section className={styles.section} aria-label="Receitas para preparar em casa">

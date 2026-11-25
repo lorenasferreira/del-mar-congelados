@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, MessageCircle } from "lucide-react";
 
@@ -8,8 +8,43 @@ import styles from "./Header.module.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef(null);
+  const [idle, setIdle] = useState(false);
   const menuButtonRef = useRef(null);
   const navLinksRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const header = headerRef.current;
+    const page = document.documentElement;
+    const updateHeight = () => {
+      page.style.setProperty("--sticky-header-height", `${header.offsetHeight}px`);
+    };
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(header);
+    return () => {
+      observer.disconnect();
+      page.style.removeProperty("--sticky-header-height");
+    };
+  }, []);
+
+  useEffect(() => {
+    const header = headerRef.current;
+    let timer;
+    const showWhileScrolling = () => {
+      window.clearTimeout(timer);
+      setIdle(false);
+      if (window.scrollY > 0 && header.previousElementSibling.getBoundingClientRect().bottom <= 0) {
+        timer = window.setTimeout(() => setIdle(true), 1000);
+      }
+    };
+
+    window.addEventListener("scroll", showWhileScrolling, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", showWhileScrolling);
+      window.clearTimeout(timer);
+    };
+  }, []);
 
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 769px)");
@@ -47,7 +82,7 @@ function Header() {
   };
 
   return (
-    <header className={styles.header}>
+    <header ref={headerRef} className={styles.header} data-idle={idle && !menuOpen}>
       <div className={styles.mainHeader}>
         <Link to="/" className={styles.logo} onClick={closeMenu}>
           <img
@@ -62,10 +97,10 @@ function Header() {
           to={WHATSAPP_URL || "/contato"}
           onClick={closeMenu}
           className={styles.whatsappButton}
-          aria-label={WHATSAPP_URL ? "Consultar pelo WhatsApp" : "Atendimento"}
+          aria-label={WHATSAPP_URL ? "Pedir pelo WhatsApp" : "Pedir pelo WhatsApp — informações de atendimento"}
         >
           <MessageCircle size={19} strokeWidth={1.7} aria-hidden="true" />
-          <span>{WHATSAPP_URL ? "Consultar pelo WhatsApp" : "Atendimento"}</span>
+          <span>Pedir pelo WhatsApp</span>
         </Link>
       </div>
 

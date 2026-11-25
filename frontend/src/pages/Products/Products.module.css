@@ -32,8 +32,9 @@
 
 .title em {
   color: var(--color-secondary);
-  font-family: var(--font-editorial);
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: var(--font-bold);
+  font-style: normal;
 }
 
 .subtitle {

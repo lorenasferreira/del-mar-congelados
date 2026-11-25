@@ -1,4 +1,4 @@
-import { BadgeCheck, Snowflake, Clock3, Fish } from "lucide-react";
+import { BadgeCheck, Snowflake, Clock3, Truck } from "lucide-react";
 
 const benefits = [
   {
@@ -11,8 +11,8 @@ const benefits = [
   {
     id: "conservacao",
     icon: Snowflake,
-    title: "Produtos congelados",
-    description: "Opções congeladas e embaladas para diferentes preparos.",
+    title: "Conservação garantida",
+    description: "Congelados com qualidade preservada até chegar à sua casa.",
   },
   {
     id: "praticidade",
@@ -22,10 +22,10 @@ const benefits = [
       "Mais facilidade para ter pescados e frutos do mar sempre à mão.",
   },
   {
-    id: "experiencia",
-    icon: Fish,
-    title: "Experiência em pescados",
-    description: "A experiência da Casa Del Mar Meriti orienta a nossa seleção.",
+    id: "entrega",
+    icon: Truck,
+    title: "Entrega na sua região",
+    description: "Comodidade para receber seus produtos sem sair de casa.",
   },
 ];
 

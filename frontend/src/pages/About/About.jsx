@@ -3,6 +3,17 @@ import { Link } from "react-router-dom";
 
 import styles from "./About.module.css";
 
+const media = import.meta.glob("../../assets/brand-story/casa-del-mar-*", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const facade = media["../../assets/brand-story/casa-del-mar-fachada.webp"];
+const video = media["../../assets/brand-story/casa-del-mar-video.mp4"];
+const poster = media["../../assets/brand-story/casa-del-mar-poster.webp"];
+const captions = media["../../assets/brand-story/casa-del-mar-video.pt-BR.vtt"];
+
 function About() {
   return (
     <main className={styles.page}>
@@ -20,7 +31,7 @@ function About() {
       <section className={styles.origin}>
         <div className={styles.container}>
           <div className={styles.split}>
-            <div className={styles.textContent}>
+            <div className={styles.roots}>
               <Waves size={36} strokeWidth={1.5} aria-hidden="true" />
               <h2>Nossas <em>raízes</em></h2>
               <p>
@@ -32,23 +43,47 @@ function About() {
                 da região por produtos mais práticos, surgiu uma proposta própria para
                 facilitar o preparo das refeições do dia a dia.
               </p>
+              {facade && (
+                <figure className={styles.facade}>
+                  <img src={facade} alt="Fachada da Casa Del Mar Meriti com o nome da loja visível"
+                    width="1200" height="900" loading="lazy" decoding="async" />
+                  <figcaption>Casa Del Mar Meriti, nossa matriz em São João de Meriti (RJ).</figcaption>
+                </figure>
+              )}
             </div>
-            <div className={styles.textContent}>
-              <h2>Qualidade que começa <em>na seleção</em></h2>
-              <p>
-                Uma boa refeição começa pela escolha dos ingredientes. Por isso,
-                valorizamos a qualidade dos produtos e a seleção dos fornecedores,
-                de filés de peixe a camarões descascados e bacalhau.
-              </p>
-              <h2>Praticidade para <em>o seu dia a dia</em></h2>
-              <p>
-                Queremos tornar o preparo de pescados mais simples com produtos
-                selecionados para uma refeição durante a semana ou uma ocasião especial.
-              </p>
+            <div className={styles.principles}>
+              <section className={styles.textContent}>
+                <h2>Qualidade que começa <em>na seleção</em></h2>
+                <p>
+                  Uma boa refeição começa pela escolha dos ingredientes. Por isso,
+                  valorizamos a qualidade dos produtos e a seleção dos fornecedores,
+                  de filés de peixe a camarões descascados e bacalhau.
+                </p>
+              </section>
+              <section className={styles.textContent}>
+                <h2>Praticidade para <em>o seu dia a dia</em></h2>
+                <p>
+                  Queremos tornar o preparo de pescados mais simples com produtos
+                  selecionados para uma refeição durante a semana ou uma ocasião especial.
+                </p>
+              </section>
             </div>
           </div>
         </div>
       </section>
+
+      {video && (
+        <section className={styles.mediaSection} aria-labelledby="matrix-video-title">
+          <div className={styles.container}>
+            <h2 id="matrix-video-title">Conheça a Casa Del Mar Meriti</h2>
+            <video controls playsInline preload="none" poster={poster}
+              aria-labelledby="matrix-video-title">
+              <source src={video} type="video/mp4" />
+              {captions && <track kind="captions" src={captions} srcLang="pt-BR" label="Português (Brasil)" />}
+            </video>
+          </div>
+        </section>
+      )}
 
       <section className={styles.closing}>
         <div className={styles.container}>

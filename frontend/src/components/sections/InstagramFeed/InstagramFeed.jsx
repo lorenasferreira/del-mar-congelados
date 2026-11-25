@@ -36,9 +36,9 @@ function InstagramFeed() {
 
         {instagramPosts.length > 0 && (
           <div className={styles.grid}>
-            {instagramPosts.map(({ image, alt, permalink }) => {
+            {instagramPosts.map(({ image, alt, permalink, width, height }) => {
               const photo = (
-                <img src={image} alt={alt} width="1080" height="1080"
+                <img src={image} alt={alt} width={width} height={height}
                   loading="lazy" decoding="async" className={styles.image} />
               );
               return permalink ? (

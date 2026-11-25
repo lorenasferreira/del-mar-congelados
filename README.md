@@ -21,14 +21,16 @@ The first release is a presentation catalog. Customers will confirm availability
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Brand introduction, category shortcuts, featured products and a link to the parent business’s Instagram |
+| `/` | Brand introduction, category shortcuts, postcode lookup, featured products and a curated Instagram gallery |
 | `/produtos` | Demonstration catalog with search, category filters, sorting and a service inquiry section |
 | `/quem-somos` | Business background, selection principles and link to the catalog |
-| `/receitas`, `/receitas/:slug` | Demonstration recipe index and detail pages |
+| `/receitas`, `/receitas/:slug` | Demonstration recipes with AI-generated illustrations |
 | `/contato` | Commercial channel status and the parent business’s Instagram |
 | Other addresses | Client-side page-not-found view |
 
-The Instagram section supports manually curated local images and optional links to original posts. It currently links to the parent profile while the post selection is pending.
+The Instagram section supports manually curated local images and optional links to original posts. Four selected images are displayed alongside a link to the parent profile.
+
+The home page uses ViaCEP to look up Brazilian addresses. Delivery eligibility is evaluated against a separate local configuration, which is awaiting the confirmed service-area list.
 
 ## Screenshots
 
@@ -93,7 +95,7 @@ The repository has no configured automated test suite. See the [technical review
 
 For a future Vercel deployment, set the root directory to `frontend`, use the Vite preset and publish `dist`. The approved public domain enables absolute social image URLs, canonical links and sitemap generation. The SPA serves site-wide social metadata to crawlers without JavaScript and uses page-specific metadata in the browser.
 
-Production content is pending the final catalog, commercial WhatsApp number, service conditions, selected Instagram posts and confirmed domain. See the [launch checklist](docs/ROADMAP.md).
+Production content is pending the final catalog, commercial WhatsApp number, service conditions, confirmed delivery areas and hours, institutional media and the public domain. See the [launch checklist](docs/ROADMAP.md).
 
 ## Author
 

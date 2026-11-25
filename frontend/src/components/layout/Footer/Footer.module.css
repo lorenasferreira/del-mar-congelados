@@ -12,8 +12,8 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1.5fr 0.8fr 1.2fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.2fr 0.85fr 1fr 1fr;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
   padding-bottom: 3.5rem;
 }
 
@@ -31,30 +31,14 @@
   text-decoration: none;
 }
 
-.brandLink > svg {
-  color: #8bd5ec;
-  flex-shrink: 0;
-}
-
-.brandName {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-primary);
-  font-size: 1.55rem;
-  font-weight: var(--font-extrabold);
-  letter-spacing: 0.07em;
-  line-height: 1.05;
-}
-
-.brandName span {
-  margin-top: 0.35rem;
-  font-size: 0.63rem;
-  font-weight: var(--font-semibold);
-  letter-spacing: 0.27em;
+.brandLink img {
+  width: 8.5rem;
+  height: auto;
+  border-radius: var(--radius-md);
 }
 
 .description {
-  margin: 1.5rem 0;
+  margin: 1rem 0 1.15rem;
   color: #c3d9e9;
   font-size: 0.85rem;
   line-height: 1.8;
@@ -96,7 +80,7 @@
   margin: 0 0 1.5rem;
   color: var(--color-white);
   font-family: var(--font-primary);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: var(--font-semibold);
 }
 

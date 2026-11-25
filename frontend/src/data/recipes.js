@@ -1,11 +1,12 @@
-// Conteúdo demonstrativo para revisão editorial. Fotografias dos pratos pendentes.
+// Conteúdo demonstrativo para revisão editorial. Imagens ilustrativas geradas por IA.
 const recipes = [
   {
     "id": "recipe-001",
     "slug": "moqueca-de-peixe",
     "name": "Moqueca de peixe",
     "description": "Peixe cozido suavemente com tomate, pimentões e leite de coco. Uma receita para servir com arroz branco.",
-    "image": null,
+    "image": "/assets/images/recipes/moqueca-de-peixe.webp",
+    "imageAlt": "Moqueca com pedaços de peixe branco, tomate, pimentões e coentro em uma panela escura.",
     "prepTime": 45,
     "servings": 4,
     "difficulty": "Fácil",
@@ -36,7 +37,8 @@ const recipes = [
     "slug": "camarao-ao-alho-e-oleo",
     "name": "Camarão ao alho e óleo",
     "description": "Alho dourado, limão e salsinha em um preparo rápido que valoriza o sabor do camarão.",
-    "image": null,
+    "image": "/assets/images/recipes/camarao-ao-alho-e-oleo.webp",
+    "imageAlt": "Camarões rosados salteados com lâminas de alho dourado e salsinha em uma frigideira.",
     "prepTime": 20,
     "servings": 4,
     "difficulty": "Fácil",
@@ -61,7 +63,8 @@ const recipes = [
     "slug": "peixe-assado-com-legumes",
     "name": "Peixe assado com legumes",
     "description": "Filés de peixe com batatas, cenoura e abobrinha, perfumados com ervas e assados na mesma travessa.",
-    "image": null,
+    "image": "/assets/images/recipes/peixe-assado-com-legumes.webp",
+    "imageAlt": "Filés de peixe dourados com batatas, cenoura, abobrinha e cebola em uma travessa.",
     "prepTime": 60,
     "servings": 4,
     "difficulty": "Fácil",
