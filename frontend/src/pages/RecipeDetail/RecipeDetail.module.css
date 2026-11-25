@@ -12,7 +12,6 @@
 .facts { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.75rem 0; }
 .facts dt { display: flex; align-items: center; gap: 0.4rem; color: var(--color-gray-700); font-size: 0.75rem; }
 .facts dd { margin: 0.5rem 0 0; font-weight: var(--font-semibold); font-size: 0.9rem; }
-.notice { max-width: 520px; color: var(--color-gray-700); font-size: 0.75rem; line-height: 1.7; }
 .preparation { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 4rem; align-items: start; padding-block: 4rem; }
 .preparation h2 { margin: 0 0 1.5rem; font-size: clamp(1.6rem, 3vw, 2rem); }
 .ingredients { padding: 2rem; border-radius: var(--radius-lg); background: var(--color-accent-soft); }

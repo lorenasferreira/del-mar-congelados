@@ -83,9 +83,8 @@ function Products() {
             encontre opções para suas receitas.
           </p>
 
-          <p className={styles.demoNotice}>
-            Catálogo demonstrativo. Produtos, disponibilidade e preços sujeitos
-            à confirmação.
+          <p className={styles.confirmationNote}>
+            Produtos, disponibilidade e preços sujeitos à confirmação.
           </p>
         </div>
       </section>

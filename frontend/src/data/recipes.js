@@ -89,6 +89,69 @@ const recipes = [
       "Volte ao forno sem cobrir por 20 a 25 minutos, até os legumes ficarem macios e o peixe opaco no centro, separando-se facilmente com um garfo. O tempo pode variar conforme a espessura dos filés.",
       "Retire do forno e sirva o peixe com os legumes e o caldo da assadeira."
     ]
+  },
+  {
+    "id": "recipe-004",
+    "slug": "arroz-de-peixe-e-camarao",
+    "name": "Arroz de peixe e camarão",
+    "description": "Arroz úmido com tomate, pimentão, peixe em cubos e camarão, finalizado com salsinha e limão.",
+    "image": "/assets/images/recipes/arroz-de-peixe-e-camarao.webp",
+    "imageAlt": "Arroz com tomate, pedaços de peixe, camarões e salsinha em uma travessa escura.",
+    "prepTime": 45,
+    "servings": 4,
+    "difficulty": "Média",
+    "ingredients": [
+      "300 g de filé de peixe branco firme, em cubos de 3 cm",
+      "250 g de camarão cru limpo e sem casca",
+      "1½ xícara de arroz agulhinha",
+      "3 xícaras de caldo de legumes quente",
+      "1 cebola pequena picada",
+      "2 dentes de alho picados",
+      "½ pimentão vermelho picado",
+      "2 tomates maduros picados",
+      "2 colheres de sopa de azeite",
+      "½ colher de chá de sal, ou a gosto",
+      "1 colher de sopa de suco de limão",
+      "2 colheres de sopa de salsinha picada"
+    ],
+    "steps": [
+      "Se o peixe ou o camarão estiverem congelados, descongele na geladeira antes do preparo. Mantenha os pescados refrigerados enquanto prepara os legumes.",
+      "Em uma panela larga, aqueça o azeite em fogo médio. Refogue a cebola e o pimentão por 4 minutos. Junte o alho e, depois de 30 segundos, acrescente os tomates. Cozinhe por mais 3 minutos.",
+      "Junte o arroz, misture por 1 minuto e acrescente o caldo e o sal. Quando ferver, reduza o fogo e cozinhe com a panela semitampada por cerca de 10 minutos.",
+      "Distribua o peixe sobre o arroz ainda úmido. Tampe e cozinhe por 4 minutos. Acrescente o camarão e cozinhe por mais 3 a 5 minutos, até o arroz ficar macio, o peixe atingir 63 °C no centro e o camarão ficar firme e opaco. Se necessário, adicione água quente aos poucos.",
+      "Desligue o fogo, finalize com salsinha e suco de limão e sirva em seguida."
+    ]
+  },
+  {
+    "id": "recipe-005",
+    "slug": "bacalhau-a-gomes-de-sa",
+    "name": "Bacalhau à Gomes de Sá",
+    "description": "Lascas de bacalhau com batatas, cebolas macias, azeitonas pretas e ovos cozidos.",
+    "image": "/assets/images/recipes/bacalhau-a-gomes-de-sa.webp",
+    "imageAlt": "Travessa com lascas de bacalhau, batatas, cebola, azeitonas pretas e rodelas de ovo cozido.",
+    "prepTime": 75,
+    "servings": 4,
+    "difficulty": "Avançada",
+    "ingredients": [
+      "600 g de lombo de bacalhau já dessalgado",
+      "750 g de batatas",
+      "2 cebolas médias em rodelas finas",
+      "3 dentes de alho fatiados",
+      "5 colheres de sopa de azeite",
+      "3 ovos",
+      "70 g de azeitonas pretas sem caroço",
+      "3 colheres de sopa de salsinha picada",
+      "¼ de colher de chá de pimenta-do-reino",
+      "Sal a gosto, se necessário"
+    ],
+    "steps": [
+      "Use bacalhau já dessalgado. Se estiver congelado, descongele na geladeira antes do preparo. Preaqueça o forno a 200 °C.",
+      "Cozinhe as batatas inteiras em água até ficarem macias sem desmanchar, cerca de 20 minutos. Escorra, deixe amornar e corte em rodelas de aproximadamente 1 cm.",
+      "Em outra panela, cubra o bacalhau com água e cozinhe em fervura branda por cerca de 8 a 12 minutos, conforme a espessura, até o centro atingir 63 °C. Escorra, retire pele e espinhas e separe a carne em lascas grandes.",
+      "Cozinhe os ovos em água fervente por 10 a 12 minutos, até claras e gemas ficarem firmes. Resfrie em água fria, descasque e corte em rodelas.",
+      "Aqueça 4 colheres de azeite e cozinhe as cebolas em fogo médio-baixo por 10 a 12 minutos, até ficarem macias. Junte o alho e a pimenta e mexa por mais 1 minuto.",
+      "Em uma travessa, intercale batata, cebola e bacalhau. Prove antes de ajustar o sal. Regue com o azeite restante e asse por 15 a 20 minutos, até aquecer bem e dourar levemente. Finalize com os ovos, as azeitonas e a salsinha."
+    ]
   }
 ];
 

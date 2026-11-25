@@ -4,6 +4,7 @@ import { FaInstagram } from "react-icons/fa6";
 
 import { INSTAGRAM_URL, WHATSAPP_URL } from "../../../config/contact";
 
+import footerLogo from "../../../assets/footer/del-mar-congelados-footer.webp";
 import styles from "./Footer.module.css";
 
 const navigationLinks = [
@@ -28,42 +29,11 @@ function Footer() {
               className={styles.brandLink}
               aria-label="Del Mar Congelados — voltar ao início"
             >
-              <img
-                src="/assets/logos/del-mar-congelados-logo.webp"
-                alt=""
-                width="480"
-                height="480"
-                loading="lazy"
-              />
+              <img src={footerLogo} alt="" width="480" height="432" loading="lazy" decoding="async" />
             </Link>
-
             <p className={styles.description}>
               Qualidade, praticidade e o melhor do mar para a sua mesa.
             </p>
-
-            <div className={styles.socialLinks}>
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram da Casa del Mar Meriti"
-                className={styles.socialLink}
-              >
-                <FaInstagram size={19} aria-hidden="true" />
-              </a>
-
-              {WHATSAPP_URL && (
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp da Del Mar Congelados"
-                  className={styles.socialLink}
-                >
-                  <MessageCircle size={19} aria-hidden="true" />
-                </a>
-              )}
-            </div>
           </div>
 
           <nav className={styles.column} aria-label="Navegação do rodapé">
@@ -89,45 +59,22 @@ function Footer() {
           </nav>
 
           <div id="contato" className={styles.column}>
-            <h2>Atendimento</h2>
-
-            {WHATSAPP_URL ? (
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.contactItem}
-              >
-                <MessageCircle size={18} aria-hidden="true" />
-                <span>Consultar pelo WhatsApp</span>
-                <ArrowUpRight size={15} aria-hidden="true" />
-              </a>
-            ) : (
-              <div className={styles.contactItem}>
-                <MessageCircle size={18} aria-hidden="true" />
-                <span>WhatsApp comercial em configuração</span>
-              </div>
-            )}
-          </div>
-
-          <div className={styles.column}>
             <h2>Conecte-se</h2>
 
-            <p className={styles.connectText}>
-              Acompanhe nossas novidades, produtos e inspirações do mar.
-            </p>
-
             <p className={styles.instagramLabel}>Instagram da matriz</p>
-
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.instagramLink}
-            >
-              @casadelmar.meriti
-              <ArrowUpRight size={15} aria-hidden="true" />
-            </a>
+            <div className={styles.socialLinks}>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className={styles.instagramLink}>
+                <FaInstagram size={18} aria-hidden="true" />
+                @casadelmar.meriti
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </a>
+              {WHATSAPP_URL && (
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+                  aria-label="WhatsApp da Del Mar Congelados" className={styles.socialLink}>
+                  <MessageCircle size={18} aria-hidden="true" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
 

@@ -37,13 +37,6 @@
   line-height: 1.85;
 }
 
-.notice {
-  margin: 1.5rem 0 0;
-  color: var(--color-gray-700);
-  font-size: 0.75rem;
-  line-height: 1.7;
-}
-
 .section { padding: 4rem 0; background: var(--color-off-white); }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
 .closing { padding: 4rem 0 5rem; text-align: center; }
@@ -76,7 +69,18 @@
   .container { width: calc(100% - 2rem); }
   .hero { padding: 3.5rem 0; }
   .section { padding: 2.5rem 0; }
-  .grid { grid-template-columns: minmax(0, 1fr); }
+  .grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 86%;
+    gap: 0.85rem;
+    padding: 0.3rem 0.25rem 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.25rem;
+  }
+
+  .grid > article { scroll-snap-align: start; }
 }
 
 @media (prefers-reduced-motion: reduce) {

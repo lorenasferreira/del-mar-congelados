@@ -35,7 +35,6 @@ function RecipeDetail() {
                   <div><dt><Users size={18} aria-hidden="true" />Porções</dt><dd>{recipe.servings} porções</dd></div>
                   <div><dt><ChefHat size={18} aria-hidden="true" />Dificuldade</dt><dd>{recipe.difficulty}</dd></div>
                 </dl>
-                <p className={styles.notice}>Receita demonstrativa, sujeita à revisão. Imagem ilustrativa gerada por IA. Tempos aproximados, considerando os pescados já descongelados.</p>
               </div>
               <div className={styles.visual}><RecipeImage recipe={recipe} priority /></div>
             </div>

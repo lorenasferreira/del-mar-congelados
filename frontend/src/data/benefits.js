@@ -1,4 +1,4 @@
-import { BadgeCheck, Snowflake, Clock3, Truck } from "lucide-react";
+import { BadgeCheck, Snowflake, Clock3, Fish } from "lucide-react";
 
 const benefits = [
   {
@@ -22,10 +22,10 @@ const benefits = [
       "Mais facilidade para ter pescados e frutos do mar sempre à mão.",
   },
   {
-    id: "entrega",
-    icon: Truck,
-    title: "Entrega na sua região",
-    description: "Comodidade para receber seus produtos sem sair de casa.",
+    id: "experiencia",
+    icon: Fish,
+    title: "Experiência em pescados",
+    description: "A experiência da Casa Del Mar Meriti orienta nossa seleção de pescados.",
   },
 ];
 

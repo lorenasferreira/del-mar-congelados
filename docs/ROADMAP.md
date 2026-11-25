@@ -15,8 +15,12 @@
 - [ ] Receber e revisar catálogo final, com nomes, categorias, pesos/unidades, preços, descrições e imagens aprovadas. Confirmar se os preços serão exibidos ou consultados pelo WhatsApp.
 - [ ] Confirmar número do WhatsApp comercial da Del Mar Congelados e testar link e mensagem em celular e desktop.
 - [ ] Confirmar se a TopBar pode publicar “Barra Olímpica” e os horários restaurados (seg–sex 5h–19h, sáb 5h–17h, dom 5h–13h). Verificar se pertencem à Del Mar Congelados ou à Casa Del Mar Meriti.
-- [ ] Aprovar os textos restaurados “Entrega na sua região” e “Conservação garantida” antes da publicação.
+- [ ] Aprovar a afirmação “Conservação garantida” antes da publicação.
 - [ ] Confirmar ruas, CEPs, condomínios e limites efetivamente atendidos. Se aplicáveis, confirmar taxa, pedido mínimo e demais condições. Só marcar a lista como completa depois da aprovação.
+- [x] Integrar a animação aprovada da Home em MP4 e extrair o poster.
+- [ ] Validar a apresentação dos materiais ilustrativos na revisão final.
+- [x] Integrar a logo clara transparente do Footer.
+- [ ] Aprovar a remoção dos arquivos da montagem fotográfica anterior.
 - [ ] Receber a foto real da fachada da matriz e, se disponível, vídeo autorizado de 20–30 segundos. Confirmar poster, legendas e alternativa textual conforme o conteúdo do vídeo.
 - [ ] Validar as quatro imagens do Instagram da matriz para publicação e adicionar os permalinks originais quando enviados.
 - [ ] Aprovar as receitas existentes e suas imagens ilustrativas ou definir quais sairão da versão publicada.

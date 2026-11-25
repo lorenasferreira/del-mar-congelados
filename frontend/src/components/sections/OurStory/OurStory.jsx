@@ -1,6 +1,7 @@
-import { ArrowRight, Waves } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import facade from "../../../assets/brand-story/market-facade-home.webp";
 import styles from "./OurStory.module.css";
 
 function OurStory() {
@@ -19,9 +20,10 @@ function OurStory() {
             <ArrowRight size={17} strokeWidth={1.8} aria-hidden="true" />
           </Link>
         </div>
-        <div className={styles.brandArt} aria-hidden="true">
-          <Waves size={100} strokeWidth={1} />
-        </div>
+        <figure className={styles.facade}>
+          <img src={facade} alt="Ilustração da fachada azul da Casa Del Mar Meriti com balcões voltados para a rua"
+            width="1200" height="676" loading="lazy" decoding="async" />
+        </figure>
       </div>
     </section>
   );

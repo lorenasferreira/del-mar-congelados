@@ -24,7 +24,7 @@ The first release is a presentation catalog. Customers will confirm availability
 | `/` | Brand introduction, category shortcuts, postcode lookup, featured products and a curated Instagram gallery |
 | `/produtos` | Demonstration catalog with search, category filters, sorting and a service inquiry section |
 | `/quem-somos` | Business background, selection principles and link to the catalog |
-| `/receitas`, `/receitas/:slug` | Demonstration recipes with AI-generated illustrations |
+| `/receitas`, `/receitas/:slug` | Seafood recipes with illustrative images |
 | `/contato` | Commercial channel status and the parent business’s Instagram |
 | Other addresses | Client-side page-not-found view |
 
@@ -41,6 +41,9 @@ Captured from the local production build in Chrome at 1440 × 1000 and 393 × 84
   <tr><td><img src="docs/screenshots/home-desktop.webp" width="340" alt="Home, desktop viewport" /></td><td><img src="docs/screenshots/products-desktop.webp" width="340" alt="Products, desktop viewport" /></td><td><img src="docs/screenshots/about-desktop.webp" width="340" alt="Quem Somos, desktop viewport" /></td></tr>
   <tr><td><img src="docs/screenshots/home-mobile.webp" width="200" alt="Home, mobile viewport" /></td><td><img src="docs/screenshots/products-mobile.webp" width="200" alt="Products, mobile viewport" /></td><td><img src="docs/screenshots/about-mobile.webp" width="200" alt="Quem Somos, mobile viewport" /></td></tr>
 </table>
+
+[Home video and storefront illustration](docs/screenshots/home-institutional-desktop.webp) · [Quem Somos institutional imagery](docs/screenshots/about-institutional-desktop.webp) · [Footer with the transparent logo](docs/screenshots/footer-desktop.webp)
+
 
 ## Stack and structure
 

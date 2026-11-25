@@ -212,11 +212,15 @@
     max-width: 165px;
   }
 }
-.brandArt {
-  display: grid;
-  place-items: center;
-  min-height: clamp(9rem, 25vw, 20rem);
+.facade {
+  margin: 0;
+}
+
+.facade img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--color-primary-deep), var(--color-primary));
-  color: var(--color-accent);
 }

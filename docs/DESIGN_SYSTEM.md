@@ -80,9 +80,8 @@ Raios são moderados em cards e fotografias; filtros e alguns CTAs usam pílula.
 `MainLayout/MainLayout.jsx` renderiza TopBar → Header → Outlet → Footer → BackToTop. Páginas renderizam seu próprio `main`, sem duplicar esses elementos globais.
 
 - **TopBar:** azul-marinho, Barra Olímpica e horários restaurados em sequência sem quebra durante a animação, separadores, ticker CSS de 55s. Cópia visual com `aria-hidden`. Pausa manual, hover/foco; versão estática reorganizada em movimento reduzido. A validação dos horários antes da publicação está no roadmap.
-- **Header:** logo e CTA de atendimento; cinco itens horizontais acima de 768px. Até 768px, botão Menu com `aria-expanded`, `aria-controls` e label; dropdown absoluto abaixo do Header, fundo branco, sombra, `max-height: 65dvh` e rolagem interna. Não empurra o conteúdo. Fecha por seleção, Escape ou passagem ao desktop; foco retorna ao botão em Escape. Links fechados ficam em `display: none`. Após a TopBar sair da tela, o Header acompanha a rolagem e se recolhe depois de um segundo em repouso. Menu aberto e foco mantêm o Header visível.
-- **CTA circular do Header:** até 480px, 45 × 45px, SVG 21 × 21px, texto oculto por `display: none`, sem gap residual.
-- **Footer:** quatro colunas no desktop, duas até 1024px, uma até 600px. Logo completa da Del Mar, navegação, atendimento e Instagram. WhatsApp condicionado à existência de número. Crédito com link discreto para `https://lorenaferreira.dev`, nova aba, `noopener noreferrer` e foco visível.
+- **Header:** uma faixa com logo à esquerda, links centralizados e CTA à direita. Até 960px, o botão de menu substitui os links e abre o painel abaixo da faixa. O botão tem nome acessível, `aria-expanded` e `aria-controls`; Escape fecha o painel e devolve o foco. No menu compacto, a logo fica à esquerda, o CTA centralizado e o botão de menu à direita. O painel fecha também ao tocar fora ou trocar de rota. O CTA mantém o texto em telas estreitas. Depois que a TopBar sai da tela, o Header acompanha a rolagem e se recolhe após um segundo em repouso. Menu aberto e foco mantêm a faixa visível.
+- **Footer:** marca, links em duas colunas menores e bloco Conecte-se. Até 720px, a marca ocupa a primeira linha, e até 540px os blocos empilham. O Footer usa a logo clara com fundo transparente. O ícone de WhatsApp aparece ao lado do Instagram quando houver número. Crédito com link discreto para `https://lorenaferreira.dev`, nova aba, `noopener noreferrer` e foco visível.
 - **BackToTop:** círculo 48 × 48px, fixo no canto inferior direito; aparece após `scrollY > Math.max(600, innerHeight)`. Respeita safe area, usa scroll suave ou instantâneo conforme preferência de movimento, com cleanup dos listeners. Não existe WhatsApp flutuante implementado.
 
 ### Botões, links e cards
@@ -96,9 +95,9 @@ CTAs usam azul-marinho/azul, texto branco, ícone discreto, padding generoso e h
 
 ### Páginas e conteúdo editorial
 
-Home: Hero com fotografia, overlay e onda; categorias circulares; benefícios; consulta de área por CEP; destaques; BrandStory de qualidade/seleção com imagem; prévia Quem Somos; Instagram. **Não existe vídeo funcional** no Hero ou na BrandStory.
+Home: Hero com fotografia, overlay e onda; categorias circulares; benefícios; consulta de área por CEP; destaques; BrandStory com fundo horizontal, degradê azul e texto sobreposto; prévia Quem Somos; Instagram. Na BrandStory, o poster da animação aprovada funciona como fallback para o vídeo horizontal.
 
-Páginas institucionais usam um hero claro em gradiente e títulos com pesos mais fortes em Poppins. Quem Somos combina o bloco de raízes em azul-marinho com duas seções editoriais. Catálogo inclui aviso demonstrativo, busca e ordenação. Receitas inclui aviso demonstrativo, cards e CTA; detalhe inclui título, descrição, `dl` de metadados, ingredientes em `ul`, preparo em `ol` e outras receitas.
+Páginas institucionais usam um hero claro em gradiente e títulos com pesos mais fortes em Poppins. Quem Somos combina o bloco de raízes em azul-marinho com duas seções editoriais. O catálogo exibe uma nota discreta de confirmação e mantém busca, ordenação e filtros. Até 768px, busca e ordenação dividem uma linha com o seletor nativo acessível à direita. Receitas inclui cards e CTA. Até 600px, a coleção usa rolagem horizontal e scroll snap; detalhe inclui título, descrição, `dl` de metadados, ingredientes em `ul`, preparo em `ol` e outras receitas.
 
 ### Breakpoints encontrados
 
@@ -107,12 +106,15 @@ Não há variáveis CSS de breakpoint. As regras são locais, predominantemente 
 | Largura | Uso real |
 | --- | --- |
 | 380px | Ajuste das imagens de Categories |
-| 480px | Header circular; textos/cards do catálogo; benefícios em uma coluna; About e OurStory |
-| 600px | FeaturedProducts vira carrossel; Footer em uma coluna; filtros com scroll; Recipes e receitas relacionadas em uma coluna; Contact em uma coluna |
+| 480px | CTA do Header com espaçamento reduzido; textos/cards do catálogo; benefícios em uma coluna; About e OurStory |
+| 540px | Footer em uma coluna |
+| 600px | FeaturedProducts vira carrossel; filtros com scroll; Recipes e receitas relacionadas em uma coluna; Contact em uma coluna |
 | 700px | OurStory da Home passa a uma coluna |
-| 768px | Header mobile; catálogo em duas colunas; About e RecipeDetail em uma coluna; grids de categorias/Instagram em duas colunas |
+| 720px | Footer com a marca em linha própria |
+| 768px | catálogo em duas colunas; About e RecipeDetail em uma coluna; grids de categorias/Instagram em duas colunas |
+| 960px | Menu compacto no Header |
 | 900px | Destaques em duas colunas; Recipes em duas colunas; Contact em duas colunas e bloco de informações em uma; ajustes de OurStory/RecipeDetail |
-| 1024px | Catálogo em três colunas; Footer em duas colunas |
+| 1024px | Catálogo em três colunas |
 
 Acima desses limites: catálogo/destaques usam quatro colunas; listagem de receitas usa três. Até 600px, destaques usam scroll-snap horizontal com cards de 88% do trilho, prévia do seguinte e controles de 44 × 44px desabilitados nas extremidades. O catálogo mantém duas colunas no mobile, com ajustes de texto até 480px.
 

@@ -11,7 +11,7 @@
 .media {
   position: relative;
 
-  min-height: 380px;
+  min-height: clamp(435px, 37vw, 510px);
 
   display: flex;
   align-items: center;
@@ -104,7 +104,7 @@
   }
 
   .media {
-    min-height: 440px;
+    min-height: clamp(330px, 57vw, 440px);
     align-items: flex-end;
   }
 
@@ -122,4 +122,19 @@
     padding: 2rem;
   }
 
+}
+
+.playback {
+  position: absolute;
+  z-index: 3;
+  top: 0.8rem;
+  right: 0.8rem;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+  background: var(--color-primary-deep);
+  color: var(--color-white);
 }

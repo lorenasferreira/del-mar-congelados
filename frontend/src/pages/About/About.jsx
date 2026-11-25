@@ -1,6 +1,9 @@
 import { ArrowUpRight, Waves } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import fallbackFacade from "../../assets/brand-story/market-facade-about.webp";
+import preparation from "../../assets/brand-story/seafood-counter-preparation.webp";
+import service from "../../assets/brand-story/seafood-counter-service.webp";
 import styles from "./About.module.css";
 
 const media = import.meta.glob("../../assets/brand-story/casa-del-mar-*", {
@@ -13,6 +16,14 @@ const facade = media["../../assets/brand-story/casa-del-mar-fachada.webp"];
 const video = media["../../assets/brand-story/casa-del-mar-video.mp4"];
 const poster = media["../../assets/brand-story/casa-del-mar-poster.webp"];
 const captions = media["../../assets/brand-story/casa-del-mar-video.pt-BR.vtt"];
+
+function InstitutionalImage({ src, alt, height = 676 }) {
+  return (
+    <figure className={styles.facade}>
+      <img src={src} alt={alt} width="1200" height={height} loading="lazy" decoding="async" />
+    </figure>
+  );
+}
 
 function About() {
   return (
@@ -43,13 +54,11 @@ function About() {
                 da região por produtos mais práticos, surgiu uma proposta própria para
                 facilitar o preparo das refeições do dia a dia.
               </p>
-              {facade && (
-                <figure className={styles.facade}>
-                  <img src={facade} alt="Fachada da Casa Del Mar Meriti com o nome da loja visível"
-                    width="1200" height="900" loading="lazy" decoding="async" />
-                  <figcaption>Casa Del Mar Meriti, nossa matriz em São João de Meriti (RJ).</figcaption>
-                </figure>
-              )}
+              <InstitutionalImage src={facade ?? fallbackFacade}
+                alt={facade
+                  ? "Fachada da Casa Del Mar Meriti com o nome da loja visível"
+                  : "Ilustração da fachada azul da matriz, vista da calçada"}
+                height={facade ? 900 : 676} />
             </div>
             <div className={styles.principles}>
               <section className={styles.textContent}>
@@ -59,6 +68,7 @@ function About() {
                   valorizamos a qualidade dos produtos e a seleção dos fornecedores,
                   de filés de peixe a camarões descascados e bacalhau.
                 </p>
+                <InstitutionalImage src={preparation} alt="Ilustração de mãos selecionando pescados em um balcão com gelo" />
               </section>
               <section className={styles.textContent}>
                 <h2>Praticidade para <em>o seu dia a dia</em></h2>
@@ -66,6 +76,7 @@ function About() {
                   Queremos tornar o preparo de pescados mais simples com produtos
                   selecionados para uma refeição durante a semana ou uma ocasião especial.
                 </p>
+                <InstitutionalImage src={service} height={672} alt="Ilustração de mãos entregando um peixe no balcão da peixaria" />
               </section>
             </div>
           </div>
