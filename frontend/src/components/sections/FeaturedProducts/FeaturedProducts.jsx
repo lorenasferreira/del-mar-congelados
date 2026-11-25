@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProductCard from "../../ui/ProductCard/ProductCard";
@@ -30,6 +31,7 @@ function FeaturedProducts() {
 
   const move = (direction) => {
     const track = trackRef.current;
+    if (!track.firstElementChild) return;
     const step = track.firstElementChild.getBoundingClientRect().width
       + parseFloat(getComputedStyle(track).columnGap);
     track.scrollBy({
@@ -51,10 +53,12 @@ function FeaturedProducts() {
             </h2>
           </div>
 
-          <a href="/produtos" className={styles.viewAll}>
+          <Link to="/produtos" className={styles.viewAll}>
             Ver todos
-          </a>
+          </Link>
         </div>
+
+        <p>Seleção demonstrativa. Produtos e preços sujeitos à confirmação.</p>
 
         <div className={styles.controls} aria-label="Navegação dos destaques">
           <button type="button" aria-label="Produto anterior" aria-controls="featured-products" disabled={edges.start} onClick={() => move(-1)}>

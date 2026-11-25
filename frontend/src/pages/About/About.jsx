@@ -1,4 +1,4 @@
-import { ArrowUpRight, Waves, Fish, Heart } from "lucide-react";
+import { ArrowUpRight, Waves } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import styles from "./About.module.css";
@@ -8,15 +8,11 @@ function About() {
     <main className={styles.page}>
       <section className={styles.hero}>
         <div className={styles.container}>
-          <span className={styles.eyebrow}>CONHEÇA A DEL MAR</span>
-
-          <h1 className={styles.title}>
-            Nossa <em>História</em>
-          </h1>
-
+          <p className={styles.eyebrow}>QUEM SOMOS</p>
+          <h1 className={styles.title}>O melhor do mar, <em>com mais praticidade</em></h1>
           <p className={styles.intro}>
-            Uma história ligada ao universo do mar, à escolha dos produtos e ao
-            prazer de reunir pessoas ao redor da mesa.
+            A Del Mar Congelados nasceu da vontade de aproximar a qualidade dos pescados
+            da rotina de quem busca praticidade, sem abrir mão do sabor.
           </p>
         </div>
       </section>
@@ -24,80 +20,32 @@ function About() {
       <section className={styles.origin}>
         <div className={styles.container}>
           <div className={styles.split}>
-            <div className={styles.imageWrapper}>
-              <img
-                src="/assets/images/nossa-historia.jpg"
-                alt="Universo dos pescados e frutos do mar"
-                loading="lazy"
-              />
-            </div>
-
             <div className={styles.textContent}>
-              <span className={styles.eyebrow}>NOSSAS ORIGENS</span>
-
-              <h2>
-                Uma conexão que
-                <em> vem do mar.</em>
-              </h2>
-
+              <Waves size={36} strokeWidth={1.5} aria-hidden="true" />
+              <h2>Nossas <em>raízes</em></h2>
               <p>
-                A Del Mar Congelados tem suas raízes ligadas à Casa del Mar, uma
-                história construída em torno dos pescados e frutos do mar.
+                A Del Mar Congelados está ligada à Casa Del Mar Meriti, nossa matriz,
+                que tem uma loja física em São João de Meriti, no Rio de Janeiro.
               </p>
-
               <p>
-                Essa conexão inspira uma nova forma de apresentar produtos do
-                mar, aproximando variedade e praticidade do dia a dia.
+                Com a experiência da Casa Del Mar no comércio de pescados e a demanda
+                da região por produtos mais práticos, surgiu uma proposta própria para
+                facilitar o preparo das refeições do dia a dia.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.values}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeading}>
-            <span className={styles.eyebrow}>O QUE NOS INSPIRA</span>
-
-            <h2>
-              O mar faz parte
-              <em> da nossa essência.</em>
-            </h2>
-          </div>
-
-          <div className={styles.valuesGrid}>
-            <article className={styles.valueCard}>
-              <Waves size={30} strokeWidth={1.4} />
-
-              <h3>Conexão com o mar</h3>
-
+            <div className={styles.textContent}>
+              <h2>Qualidade que começa <em>na seleção</em></h2>
               <p>
-                O universo dos pescados e frutos do mar está no centro da nossa
-                proposta.
+                Uma boa refeição começa pela escolha dos ingredientes. Por isso,
+                valorizamos a qualidade dos produtos e a seleção dos fornecedores,
+                de filés de peixe a camarões descascados e bacalhau.
               </p>
-            </article>
-
-            <article className={styles.valueCard}>
-              <Fish size={30} strokeWidth={1.4} />
-
-              <h3>Variedade</h3>
-
+              <h2>Praticidade para <em>o seu dia a dia</em></h2>
               <p>
-                Diferentes opções para explorar sabores e preparar novas
-                receitas.
+                Queremos tornar o preparo de pescados mais simples com produtos
+                selecionados para uma refeição durante a semana ou uma ocasião especial.
               </p>
-            </article>
-
-            <article className={styles.valueCard}>
-              <Heart size={30} strokeWidth={1.4} />
-
-              <h3>Momentos à mesa</h3>
-
-              <p>
-                Acreditamos no prazer de preparar uma boa refeição e
-                compartilhá-la.
-              </p>
-            </article>
+            </div>
           </div>
         </div>
       </section>
@@ -105,18 +53,9 @@ function About() {
       <section className={styles.closing}>
         <div className={styles.container}>
           <div className={styles.closingContent}>
-            <span className={styles.eyebrow}>DEL MAR CONGELADOS</span>
-
-            <h2>
-              Do mar para
-              <em> a sua mesa.</em>
-            </h2>
-
-            <p>Conheça nossa seleção de peixes e frutos do mar congelados.</p>
-
+            <h2>Do mar <em>para a sua mesa</em></h2>
             <Link to="/produtos" className={styles.cta}>
-              Explorar produtos
-              <ArrowUpRight size={19} aria-hidden="true" />
+              Conhecer produtos <ArrowUpRight size={19} aria-hidden="true" />
             </Link>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, MessageCircle } from "lucide-react";
+
+import { WHATSAPP_URL } from "../../../config/contact";
 
 import styles from "./Header.module.css";
 
@@ -49,19 +51,21 @@ function Header() {
       <div className={styles.mainHeader}>
         <Link to="/" className={styles.logo} onClick={closeMenu}>
           <img
-            src="/assets/logos/del-mar-congelados-logo.png"
+            src="/assets/logos/del-mar-congelados-logo.webp"
             alt="Del Mar Congelados"
+            width="480"
+            height="480"
           />
         </Link>
 
         <Link
-          to="/contato"
+          to={WHATSAPP_URL || "/contato"}
           onClick={closeMenu}
           className={styles.whatsappButton}
-          aria-label="Pedir pelo WhatsApp — informações de atendimento"
+          aria-label={WHATSAPP_URL ? "Consultar pelo WhatsApp" : "Atendimento"}
         >
           <MessageCircle size={19} strokeWidth={1.7} aria-hidden="true" />
-          <span>Pedir pelo WhatsApp</span>
+          <span>{WHATSAPP_URL ? "Consultar pelo WhatsApp" : "Atendimento"}</span>
         </Link>
       </div>
 
@@ -87,21 +91,21 @@ function Header() {
             id="primary-navigation"
             className={`${styles.navLinks} ${menuOpen ? styles.navLinksOpen : ""}`}
           >
-            <Link to="/" onClick={closeMenu}>
+            <NavLink to="/" end onClick={closeMenu}>
               Início
-            </Link>
-            <Link to="/produtos" onClick={closeMenu}>
+            </NavLink>
+            <NavLink to="/produtos" onClick={closeMenu}>
               Produtos
-            </Link>
-            <Link to="/receitas" onClick={closeMenu}>
+            </NavLink>
+            <NavLink to="/receitas" onClick={closeMenu}>
               Receitas Del Mar
-            </Link>
-            <Link to="/nossa-historia" onClick={closeMenu}>
-              Nossa História
-            </Link>
-            <Link to="/contato" onClick={closeMenu}>
+            </NavLink>
+            <NavLink to="/quem-somos" onClick={closeMenu}>
+              Quem Somos
+            </NavLink>
+            <NavLink to="/contato" onClick={closeMenu}>
               Contato
-            </Link>
+            </NavLink>
           </div>
         </div>
       </nav>

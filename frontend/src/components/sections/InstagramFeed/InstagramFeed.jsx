@@ -1,41 +1,12 @@
-import { useEffect, useState } from "react";
-import { ArrowUpRight, Clapperboard } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { FaInstagram } from "react-icons/fa6";
 
-import { getInstagramPosts } from "../../../services/instagramService";
+import { instagramPosts } from "../../../data/instagramPosts";
+import { INSTAGRAM_URL } from "../../../config/contact";
 
 import styles from "./InstagramFeed.module.css";
 
-const INSTAGRAM_URL = "https://www.instagram.com/casadelmar.meriti/";
-
 function InstagramFeed() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let active = true;
-
-    async function loadPosts() {
-      try {
-        const data = await getInstagramPosts();
-
-        if (active) {
-          setPosts(data);
-        }
-      } finally {
-        if (active) {
-          setLoading(false);
-        }
-      }
-    }
-
-    loadPosts();
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
   return (
     <section
       id="instagram"
@@ -56,63 +27,31 @@ function InstagramFeed() {
 
       <div className={styles.container}>
         <div className={styles.heading}>
-          <p className={styles.eyebrow}>Acompanhe o dia a dia da matriz</p>
-
           <h2 id="instagram-title">Instagram da matriz</h2>
 
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.username}
-          >
-            @casadelmar.meriti
-            <ArrowUpRight size={15} aria-hidden="true" />
-          </a>
+          <p className={styles.empty}>
+            Acompanhe as novidades e inspirações da Casa Del Mar Meriti, nossa matriz.
+          </p>
         </div>
 
-        {loading ? (
-          <div className={styles.grid} aria-busy="true">
-            {Array.from({ length: 4 }, (_, index) => (
-              <div key={index} className={styles.skeleton} aria-hidden="true" />
-            ))}
-          </div>
-        ) : posts.length > 0 ? (
+        {instagramPosts.length > 0 && (
           <div className={styles.grid}>
-            {posts.map((post) => (
-              <a
-                key={post.id}
-                href={post.permalink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.post}
-                aria-label={`Ver publicação: ${post.alt || "Casa del Mar"}`}
-              >
-                <img
-                  src={post.image}
-                  alt={post.alt || "Publicação da Casa del Mar"}
-                  loading="lazy"
-                  className={styles.image}
-                />
-
-                {post.mediaType === "VIDEO" && (
-                  <Clapperboard
-                    size={22}
-                    className={styles.videoIcon}
-                    aria-hidden="true"
-                  />
-                )}
-
-                <div className={styles.overlay}>
-                  <FaInstagram size={27} aria-hidden="true" />
-                </div>
-              </a>
-            ))}
+            {instagramPosts.map(({ image, alt, permalink }) => {
+              const photo = (
+                <img src={image} alt={alt} width="1080" height="1080"
+                  loading="lazy" decoding="async" className={styles.image} />
+              );
+              return permalink ? (
+                <a key={image} href={permalink} target="_blank" rel="noopener noreferrer"
+                  className={styles.post} aria-label={`Ver publicação: ${alt}`}>
+                  {photo}
+                  <div className={styles.overlay} aria-hidden="true"><FaInstagram size={27} /></div>
+                </a>
+              ) : (
+                <div key={image} className={styles.post}>{photo}</div>
+              );
+            })}
           </div>
-        ) : (
-          <p className={styles.empty}>
-            Acompanhe nossas novidades diretamente no Instagram.
-          </p>
         )}
 
         <a
@@ -122,7 +61,7 @@ function InstagramFeed() {
           className={styles.button}
         >
           <FaInstagram size={18} aria-hidden="true" />
-          Acompanhar no Instagram
+          Visitar @casadelmar.meriti
           <ArrowUpRight size={16} aria-hidden="true" />
         </a>
       </div>

@@ -1,33 +1,18 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, MapPin, MessageCircle, Waves } from "lucide-react";
+import { ArrowUpRight, MessageCircle, Waves } from "lucide-react";
 import { FaInstagram } from "react-icons/fa6";
 
+import { INSTAGRAM_URL, WHATSAPP_URL } from "../../../config/contact";
+
 import styles from "./Footer.module.css";
-
-const INSTAGRAM_URL = "https://www.instagram.com/casadelmar.meriti/";
-
-const WHATSAPP_NUMBER = "";
-
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá! Vim pelo site da Del Mar Congelados e gostaria de fazer um pedido.",
-);
-
-const WHATSAPP_URL = WHATSAPP_NUMBER
-  ? `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`
-  : null;
 
 const navigationLinks = [
   { label: "Início", href: "/" },
   { label: "Produtos", href: "/produtos" },
   { label: "Receitas Del Mar", href: "/receitas" },
-  { label: "Nossa História", href: "/nossa-historia" },
-  {
-    label: "WhatsApp",
-    href: WHATSAPP_URL,
-    external: true,
-    disabled: !WHATSAPP_URL,
-  },
-  { label: "Instagram", href: INSTAGRAM_URL, external: true },
+  { label: "Quem Somos", href: "/quem-somos" },
+  { label: "Contato", href: "/contato" },
+  { label: "Instagram da matriz", href: INSTAGRAM_URL, external: true },
 ];
 
 function Footer() {
@@ -81,16 +66,12 @@ function Footer() {
           </div>
 
           <nav className={styles.column} aria-label="Navegação do rodapé">
-            <h3>Navegação</h3>
+            <h2>Navegação</h2>
 
             <ul className={styles.links}>
               {navigationLinks.map((link) => (
                 <li key={link.label}>
-                  {link.disabled ? (
-                    <span aria-disabled="true">
-                      {link.label}
-                    </span>
-                  ) : link.external ? (
+                  {link.external ? (
                     <a
                       href={link.href}
                       target="_blank"
@@ -107,15 +88,7 @@ function Footer() {
           </nav>
 
           <div id="contato" className={styles.column}>
-            <h3>Atendimento</h3>
-
-            <div className={styles.contactItem}>
-              <MapPin size={18} aria-hidden="true" />
-              <span>
-                Barra Olímpica
-                <small>Rio de Janeiro — RJ</small>
-              </span>
-            </div>
+            <h2>Atendimento</h2>
 
             {WHATSAPP_URL ? (
               <a
@@ -125,19 +98,19 @@ function Footer() {
                 className={styles.contactItem}
               >
                 <MessageCircle size={18} aria-hidden="true" />
-                <span>Faça seu pedido pelo WhatsApp</span>
+                <span>Consultar pelo WhatsApp</span>
                 <ArrowUpRight size={15} aria-hidden="true" />
               </a>
             ) : (
               <div className={styles.contactItem}>
                 <MessageCircle size={18} aria-hidden="true" />
-                <span>Pedidos e atendimento pelo WhatsApp</span>
+                <span>WhatsApp comercial em configuração</span>
               </div>
             )}
           </div>
 
           <div className={styles.column}>
-            <h3>Conecte-se</h3>
+            <h2>Conecte-se</h2>
 
             <p className={styles.connectText}>
               Acompanhe nossas novidades, produtos e inspirações do mar.

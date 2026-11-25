@@ -26,6 +26,7 @@
   color: var(--color-primary);
   font-size: clamp(3rem, 7vw, 6rem);
   line-height: 1.05;
+  text-wrap: balance;
 }
 
 .title em,

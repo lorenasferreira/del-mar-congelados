@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Clock3, Pause, Play } from "lucide-react";
+import { Waves, Fish, Pause, Play } from "lucide-react";
 import styles from "./TopBar.module.css";
 
 function TopBar() {
@@ -7,20 +7,13 @@ function TopBar() {
 
   return (
     <div className={styles.topBar}>
-      <div className={styles.viewport} tabIndex={0} aria-label="Localização e horários de atendimento">
+      <div className={styles.viewport} tabIndex={0} aria-label="Informações da Del Mar Congelados">
         <div className={`${styles.track} ${paused ? styles.paused : ""}`}>
           {[0, 1].map((copy) => (
             <div key={copy} className={styles.group} aria-hidden={copy === 1 ? true : undefined}>
-              <span className={styles.item}><MapPin size={15} aria-hidden="true" />Barra Olímpica</span>
+              <span className={styles.item}><Waves size={15} aria-hidden="true" />Del Mar Congelados</span>
               <span className={styles.separator} aria-hidden="true">•</span>
-              <span className={styles.item}>
-                <Clock3 size={15} aria-hidden="true" />
-                <span className={styles.hours}>
-                  <span>Seg a Sex: 5h às 19h</span>
-                  <span><span aria-hidden="true"> | </span>Sáb: 5h às 17h</span>
-                  <span><span aria-hidden="true"> | </span>Dom: 5h às 13h</span>
-                </span>
-              </span>
+              <span className={styles.item}><Fish size={15} aria-hidden="true" />Pescados e frutos do mar congelados</span>
               <span className={styles.separator} aria-hidden="true">•</span>
             </div>
           ))}

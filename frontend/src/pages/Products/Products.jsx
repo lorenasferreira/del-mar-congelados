@@ -1,6 +1,9 @@
 import { useMemo, useState } from "react";
 import { Search, SlidersHorizontal } from "lucide-react";
 
+import { Link, useSearchParams } from "react-router-dom";
+import { WHATSAPP_URL } from "../../config/contact";
+import categories from "../../data/categories";
 import products from "../../data/products";
 import ProductCard from "../../components/products/ProductCard/ProductCard";
 import ProductFilters from "../../components/products/ProductFilters/ProductFilters";
@@ -9,7 +12,15 @@ import styles from "./Products.module.css";
 
 function Products() {
   const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState("todos");
+  const [params, setParams] = useSearchParams();
+  const category = params.get("categoria");
+  const activeCategory = categories.some(({ id }) => id === category) ? category : "todos";
+  const setActiveCategory = (value) => {
+    const next = new URLSearchParams(params);
+    if (value === "todos") next.delete("categoria");
+    else next.set("categoria", value);
+    setParams(next, { replace: true, preventScrollReset: true });
+  };
   const [sortOrder, setSortOrder] = useState("default");
 
   const filteredProducts = useMemo(() => {
@@ -30,7 +41,8 @@ function Products() {
       const matchesSearch = searchableText.includes(query);
 
       const matchesCategory =
-        activeCategory === "todos" || product.category === activeCategory;
+        activeCategory === "todos" ||
+        (activeCategory === "promocoes" ? product.promotion : product.category === activeCategory);
 
       return matchesSearch && matchesCategory;
     });
@@ -78,8 +90,9 @@ function Products() {
         </div>
       </section>
 
-      <section className={styles.catalog} aria-label="Catálogo de produtos">
+      <section className={styles.catalog} aria-labelledby="catalog-title">
         <div className={styles.container}>
+          <h2 className="visually-hidden" id="catalog-title">Catálogo de produtos</h2>
           <div className={styles.toolbar}>
             <label className={styles.searchBox}>
               <Search size={20} aria-hidden="true" />
@@ -131,7 +144,7 @@ function Products() {
             <div className={styles.emptyState}>
               <Search size={36} aria-hidden="true" />
 
-              <h2>Nenhum produto encontrado</h2>
+              <h3>Nenhum produto encontrado</h3>
 
               <p>
                 Experimente outro termo ou selecione uma categoria diferente.
@@ -145,6 +158,22 @@ function Products() {
                 Limpar filtros
               </button>
             </div>
+          )}
+        </div>
+      </section>
+      <section className={styles.availability}>
+        <div className={styles.container}>
+          <h2>{WHATSAPP_URL ? "Consultar disponibilidade pelo WhatsApp" : "Disponibilidade e atendimento"}</h2>
+          {WHATSAPP_URL ? (
+            <>
+              <p>Consulte os produtos disponíveis, os preços atualizados e as condições de atendimento diretamente pelo nosso WhatsApp.</p>
+              <a className={styles.clearButton} href={WHATSAPP_URL}>Consultar pelo WhatsApp</a>
+            </>
+          ) : (
+            <>
+              <p>O WhatsApp comercial da Del Mar Congelados está em configuração.</p>
+              <Link className={styles.clearButton} to="/contato">Ver canais de atendimento</Link>
+            </>
           )}
         </div>
       </section>

@@ -1,62 +1,27 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-cat > .gitignore <<'EOF'
-# Dependencies
+# Dependencies and builds
 node_modules/
-
-# Builds
 dist/
+dist-ssr/
 build/
 
-# Environment variables
+# Environment and local overrides
 .env
 .env.*
 !.env.example
+*.local
+.vercel/
 
-# Logs
+# Logs and machine files
+logs/
 *.log
-
-# OS
 .DS_Store
-
-# IDE
-.vscode/
 .idea/
+.vscode/*
+!.vscode/extensions.json
 
-# Java
+# Reserved backend workspace
 target/
 *.class
-
-# Maven
-.mvn/timing.properties
-
-# IntelliJ
 *.iml
-
-# Local databases
 *.db
 *.sqlite
-EOF

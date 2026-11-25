@@ -12,7 +12,7 @@ function ProductCard({ product }) {
       <div className={styles.imageWrapper}>
         <img
           src={product.image}
-          alt={product.name}
+          alt="" width={product.imageWidth ?? 720} height={product.imageHeight ?? 480}
           className={styles.image}
           loading="lazy"
         />

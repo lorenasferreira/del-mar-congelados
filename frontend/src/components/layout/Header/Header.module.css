@@ -201,3 +201,9 @@
   outline: 3px solid var(--color-primary);
   outline-offset: 4px;
 }
+
+.navLinks a[aria-current="page"] {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}

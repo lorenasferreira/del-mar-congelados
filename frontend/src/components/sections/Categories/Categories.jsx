@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 import categories from "../../../data/categories";
@@ -13,9 +14,9 @@ function Categories() {
     >
       <div className={styles.container}>
         {categories.map((category) => (
-          <a key={category.id} href={category.href} className={styles.category}>
+          <Link key={category.id} to={category.href} className={styles.category}>
             <div className={styles.imageWrapper}>
-              <img src={category.image} alt="" className={styles.image} />
+              <img src={category.image} alt="" loading="lazy" width="480" height="320" className={styles.image} />
             </div>
 
             <h2>{category.name}</h2>
@@ -24,7 +25,7 @@ function Categories() {
               Ver mais
               <ArrowRight size={15} strokeWidth={1.8} />
             </span>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

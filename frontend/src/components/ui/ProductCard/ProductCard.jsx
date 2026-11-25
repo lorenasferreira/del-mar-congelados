@@ -9,7 +9,7 @@ function ProductCard({ product }) {
   return (
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
-        <img src={product.image} alt={product.name} className={styles.image} />
+        <img src={product.image} alt="" width={product.imageWidth ?? 720} height={product.imageHeight ?? 480} loading="lazy" className={styles.image} />
       </div>
 
       <div className={styles.content}>

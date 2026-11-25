@@ -1,11 +1,7 @@
+import categories from "../../../data/categories";
 import styles from "./ProductFilters.module.css";
 
-const categories = [
-  { id: "todos", label: "Todos" },
-  { id: "peixes", label: "Peixes" },
-  { id: "frutos-do-mar", label: "Frutos do Mar" },
-  { id: "combos", label: "Combos" },
-];
+const filters = [{ id: "todos", name: "Todos" }, ...categories];
 
 function ProductFilters({ activeCategory, onCategoryChange }) {
   return (
@@ -14,7 +10,7 @@ function ProductFilters({ activeCategory, onCategoryChange }) {
       role="group"
       aria-label="Filtrar produtos por categoria"
     >
-      {categories.map((category) => (
+      {filters.map((category) => (
         <button
           key={category.id}
           type="button"
@@ -24,7 +20,7 @@ function ProductFilters({ activeCategory, onCategoryChange }) {
           onClick={() => onCategoryChange(category.id)}
           aria-pressed={activeCategory === category.id}
         >
-          {category.label}
+          {category.name}
         </button>
       ))}
     </div>

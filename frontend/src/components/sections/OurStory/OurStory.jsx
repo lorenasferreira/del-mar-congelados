@@ -1,4 +1,5 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Waves } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import styles from "./OurStory.module.css";
 
@@ -7,38 +8,19 @@ function OurStory() {
     <section id="historia" className={styles.story}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <p className={styles.script}>Nossa</p>
-
-          <h2>História</h2>
-
+          <h2>Quem Somos</h2>
           <p className={styles.text}>
-            A Del Mar Congelados nasce como um novo capítulo de uma história
-            construída com qualidade, confiança e paixão pelo melhor do mar.
+            A Del Mar Congelados leva a experiência da Casa Del Mar Meriti no
+            comércio de pescados para uma seleção de congelados que facilita o
+            preparo das refeições do dia a dia.
           </p>
-
-          <p className={styles.text}>
-            Uma nova forma de levar a experiência da Casa del Mar para mais
-            pessoas, unindo produtos selecionados, praticidade e a comodidade de
-            receber em casa.
-          </p>
-
-          <a href="/nossa-historia" className={styles.button}>
-            Conheça nossa história
-            <ArrowRight size={17} strokeWidth={1.8} />
-          </a>
+          <Link to="/quem-somos" className={styles.button}>
+            Conheça a Del Mar
+            <ArrowRight size={17} strokeWidth={1.8} aria-hidden="true" />
+          </Link>
         </div>
-
-        <div className={styles.imageWrapper}>
-          <img
-            src="/assets/images/story/nossa-historia.jpg"
-            alt="A história por trás da Del Mar Congelados"
-            className={styles.image}
-          />
-
-          <div className={styles.detail}>
-            <span>Del Mar</span>
-            <p>Qualidade que atravessa gerações</p>
-          </div>
+        <div className={styles.brandArt} aria-hidden="true">
+          <Waves size={100} strokeWidth={1} />
         </div>
       </div>
     </section>

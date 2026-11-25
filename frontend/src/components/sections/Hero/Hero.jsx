@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { WHATSAPP_URL } from "../../../config/contact";
 import { MessageCircle, ChevronDown } from "lucide-react";
 
 import styles from "./Hero.module.css";
@@ -7,8 +9,11 @@ function Hero() {
     <section className={styles.hero}>
       <div className={styles.media}>
         <img
-          src="/assets/images/home/hero-seafood.png"
-          alt="Peixes e frutos do mar frescos da Del Mar Congelados"
+          src="/assets/images/home/hero-seafood.webp"
+          alt=""
+          width="1536"
+          height="1024"
+          fetchPriority="high"
         />
       </div>
 
@@ -21,14 +26,13 @@ function Hero() {
         </h1>
 
         <p>
-          Pescados e frutos do mar congelados, selecionados com qualidade e
-          entregues até você.
+          Pescados e frutos do mar congelados, selecionados para facilitar o preparo.
         </p>
 
-        <a href="/contato" className={styles.cta}>
-          <MessageCircle size={18} strokeWidth={1.8} />
-          Fazer pedido pelo WhatsApp
-        </a>
+        <Link to={WHATSAPP_URL || "/produtos"} className={styles.cta}>
+          {WHATSAPP_URL && <MessageCircle size={18} strokeWidth={1.8} aria-hidden="true" />}
+          {WHATSAPP_URL ? "Consultar pelo WhatsApp" : "Conhecer produtos"}
+        </Link>
       </div>
 
       <a

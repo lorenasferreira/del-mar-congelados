@@ -34,7 +34,7 @@ A linguagem combina identidade marítima e editorial gastronômico: azul-marinho
 | `--color-off-white` | `#f8fafc` | Alternância entre seções |
 | `--color-gray-100` | `#edf2f6` | Bordas e fundos |
 | `--color-gray-300` | `#b7c9dc` | Bordas e detalhes |
-| `--color-gray-500` | `#7b8b9c` | Texto auxiliar |
+| `--color-gray-500` | `#586b7e` | Texto auxiliar |
 | `--color-gray-700` | `#44566a` | Corpo e informações secundárias |
 | `--color-text` | `#082f5b` | Texto global |
 | `--color-text-light` | `#ffffff` | Texto claro |
@@ -79,7 +79,7 @@ Raios são moderados em cards e fotografias; filtros e alguns CTAs usam pílula.
 
 `MainLayout/MainLayout.jsx` renderiza TopBar → Header → Outlet → Footer → BackToTop. Páginas renderizam seu próprio `main`, sem duplicar esses elementos globais.
 
-- **TopBar:** azul-marinho, localização/horários em sequência sem quebra durante a animação, separadores, ticker CSS de 55s. Cópia visual com `aria-hidden`. Pausa manual, hover/foco; versão estática reorganizada em movimento reduzido. Sem WhatsApp nessa faixa.
+- **TopBar:** azul-marinho, marca e linha de produtos em sequência sem quebra durante a animação, separadores, ticker CSS de 55s. Cópia visual com `aria-hidden`. Pausa manual, hover/foco; versão estática reorganizada em movimento reduzido. Sem WhatsApp nessa faixa.
 - **Header:** logo e CTA de atendimento; cinco itens horizontais acima de 768px. Até 768px, botão Menu com `aria-expanded`, `aria-controls` e label; dropdown absoluto abaixo do Header, fundo branco, sombra, `max-height: 65dvh` e rolagem interna. Não empurra o conteúdo. Fecha por seleção, Escape ou passagem ao desktop; foco retorna ao botão em Escape. Links fechados ficam em `display: none`.
 - **CTA circular do Header:** até 480px, 45 × 45px, SVG 21 × 21px, texto oculto por `display: none`, sem gap residual.
 - **Footer:** quatro colunas no desktop, duas até 1024px, uma até 600px. Marca Del Mar, navegação, atendimento e Instagram. WhatsApp condicionado à existência de número. Crédito com link discreto para `https://lorenaferreira.dev`, nova aba, `noopener noreferrer` e foco visível.
@@ -96,7 +96,7 @@ CTAs usam azul-marinho/azul, texto branco, ícone discreto, padding generoso e h
 
 ### Páginas e conteúdo editorial
 
-Home: Hero com fotografia, overlay e onda; categorias circulares; benefícios; destaques; BrandStory de qualidade/seleção com imagem; prévia Nossa História; Instagram. **Não existe vídeo funcional** no Hero ou na BrandStory.
+Home: Hero com fotografia, overlay e onda; categorias circulares; benefícios; destaques; BrandStory de qualidade/seleção com imagem; prévia Quem Somos; Instagram. **Não existe vídeo funcional** no Hero ou na BrandStory.
 
 Páginas institucionais usam hero claro em gradiente, eyebrow, títulos com itálico editorial, textos curtos, grids e CTA. Catálogo inclui aviso demonstrativo, busca e ordenação. Receitas inclui aviso demonstrativo, cards e CTA; detalhe inclui título, descrição, `dl` de metadados, ingredientes em `ul`, preparo em `ol` e outras receitas.
 

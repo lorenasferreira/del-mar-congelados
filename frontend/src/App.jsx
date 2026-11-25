@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import MainLayout from "./components/layout/MainLayout/MainLayout";
 import NotFound from "./pages/NotFound/NotFound";
@@ -17,7 +17,8 @@ function App() {
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="produtos" element={<Products />} />
-          <Route path="nossa-historia" element={<About />} />
+          <Route path="quem-somos" element={<About />} />
+          <Route path="nossa-historia" element={<Navigate to="/quem-somos" replace />} />
           <Route path="contato" element={<Contact />} />
           <Route path="receitas" element={<Recipes />} />
           <Route path="receitas/:slug" element={<RecipeDetail />} />
